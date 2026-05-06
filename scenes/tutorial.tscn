@@ -1,30 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0f1qg7fofnlu"]
+[gd_scene format=3 uid="uid://d0f1qg7fofnlu"]
 
 [ext_resource type="PackedScene" uid="uid://elw4gyk8qdph" path="res://nodes/player.tscn" id="1_5c0a8"]
-
-[sub_resource type="TileSet" id="TileSet_otfl8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7jal"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6jrbt"]
 
-[node name="tutorial" type="Node2D"]
+[node name="tutorial" type="Node2D" unique_id=135151178]
 
-[node name="player" parent="." instance=ExtResource("1_5c0a8")]
+[node name="player" parent="." unique_id=878644896 instance=ExtResource("1_5c0a8")]
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=644618454]
 position_smoothing_enabled = true
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_otfl8")
-format = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2072231188]
 position = Vector2(0, 76)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=918257617]
 shape = SubResource("WorldBoundaryShape2D_c7jal")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1296842140]
 scale = Vector2(209, 4)
 texture = SubResource("PlaceholderTexture2D_6jrbt")
