@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0f1qg7fofnlu"]
+
+[ext_resource type="PackedScene" uid="uid://elw4gyk8qdph" path="res://nodes/player.tscn" id="1_5c0a8"]
+
+[sub_resource type="TileSet" id="TileSet_otfl8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7jal"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6jrbt"]
+
+[node name="tutorial" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_5c0a8")]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position_smoothing_enabled = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_otfl8")
+format = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_c7jal")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(209, 4)
+texture = SubResource("PlaceholderTexture2D_6jrbt")
